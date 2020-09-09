@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <title>gifOS</title>
+    <link href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/sailor_day.css" id="theme">
+    <link rel="stylesheet" href="./styles/inner_gifs.css">
+</head>
+
+<body>
+    <div class="top-bar">
+        <p>Bienvenides a Guifos.com -----Donde los gifs están.////// Número de visitas: 12.525.344</p>
+    </div>
+
+    <div class="content">
+
+        <header>
+            <nav class="nav-bar">
+                <a href="index.html"><img id="img-header" src="./images/gifOF_logo.png" alt=""></a>
+                <div class="btns-header">
+                    <div class="create-gif"><a href="upload.html" class="btn-create-gif"><span>Crear
+                                Guifos</span></a></div>
+                    <div class="choose-style">
+                        <ul>
+                            <li id="elegir-tema" onmouseover="ver()" onmouseout="ocultar()">
+                                <button class="btn-header"><span>Elegir tema</span></button>
+                                <button class="btn-header dropdown"><span><img src="./images/dropdown.svg"
+                                            alt="dropdown"></span></button>
+                                <div id="style-list">
+                                    <p onclick="active_sailor_day()" class="sailor-day"><span
+                                            class="dashed">S</span>ailor
+                                        Day</p>
+                                    <p onclick="active_sailor_night()" class="sailor-night"><span
+                                            class="dashed">S</span>ailor Night</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <a class="url-header" href="my-gifos.html">
+                        <span class="dashed">M</span>is Guifos<span id="gif-count"></span>
+                    </a>
+                </div>
+            </nav>
+
+            <div class="search-content">
+                <div class="title-search-bar">
+                    <p>Buscar</p>
+                </div>
+                <div class="search-bar">
+                    <input class="search-input" autocomplete="off" id="search"
+                        placeholder="Busca gifs, hashtags, temas, busca lo que quieras…" oninput="resultadoSugerido()">
+                    <button type="submit" class="btn-search" onclick="getSearchResults()">
+                        <span class="btn-search-content"><img id="lupa" src="./images/lupa_inactive.svg"
+                                alt="lupa" /></span></button>
+                </div>
+                <div class="autocomplete-content">
+                </div>
+            </div>
+        </header>
+
+        <div class="search-results">
+            <div class="title-section">Resultados de búsqueda: <span class="clear-results"
+                    onclick="clearResults()">Limpiar resultados</span></div>
+            <div id="inner_gifs"></div>
+        </div>
+
+        <div class="suggested">
+            <div class="title-section">Hoy te sugerimos: </div>
+            <div id="gif_suggested"></div>
+        </div>
+
+        <div class="trendings">
+            <div class="title-section">Tendencias: </div>
+            <div id="giftrending"></div>
+        </div>
+    </div>
+
+    <aside class="loading-page">
+        Cargando
+    </aside>
+    <script src="./scripts/get-results.js"></script>
+    <script src="./scripts/social-media.js"></script>
+    <script src="./scripts/script.js"></script>
+
+</body>
+
+</html>
